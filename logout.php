@@ -1,0 +1,42 @@
+<?php  
+session_start(); 
+$f=0;
+if(isset($_SESSION["semail"]))
+{
+	$f=1;
+}
+else if(isset($_SESSION["temail"]))
+{
+	$f=2;
+}
+else
+{
+	$f=0;
+}
+session_destroy(); 
+ if($f==0)
+ {
+?>
+<script>
+window.location="login.php";
+</script>
+<?php
+}
+if($f==1)
+ {
+?>
+<script>
+window.location="student.php";
+</script>
+<?php
+}
+if($f==2)
+ {
+?>
+<script>
+window.location="teacher.php";
+</script>
+<?php
+}
+  exit;
+?>
